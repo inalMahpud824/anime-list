@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.scroll-hidden {
+  scrollbar-color: transparent transparent;
+}
+.scroll-hidden:hover{
+  scrollbar-color: auto;
+}
