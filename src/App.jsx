@@ -10,7 +10,7 @@ function App() {
     const fetchAnimeAiring = async () => {
       try {
         const response = await axios.get(
-          "https://api.myanimelist.net/v2/anime/ranking?ranking_type=airing&limit=10",
+          "/api/anime/ranking?ranking_type=airing&limit=10",
           {
             headers: {
               "X-MAL-CLIENT-ID": import.meta.env.VITE_APP_CLIENT_ID,
@@ -26,7 +26,7 @@ function App() {
     const fetchAnimeUpcoming = async () => {
       try {
         const response = await axios.get(
-          "https://api.myanimelist.net/v2/anime/ranking?ranking_type=upcoming&limit=10",
+          "/api/anime/ranking?ranking_type=upcoming&limit=10",
           {
             headers: {
               "X-MAL-CLIENT-ID": import.meta.env.VITE_APP_CLIENT_ID,
