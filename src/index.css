@@ -8,3 +8,7 @@
 .scroll-hidden:hover{
   scrollbar-color: auto;
 }
+
+.item:hover figcaption {
+  bottom: 0;
+}
