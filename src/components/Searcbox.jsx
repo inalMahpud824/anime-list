@@ -9,7 +9,7 @@ const SearchBox = () => {
           <input
             type="text"
             placeholder="Search..."
-            className=" outline-none p-3 rounded-md bg-white"
+            className=" outline-none p-3 rounded-md bg-white w-full"
           />
         </div>
       </div>

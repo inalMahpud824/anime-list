@@ -1,14 +1,12 @@
-import axios from "axios";
 import Navbar from "./components/Navbar";
 import SearchBox from "./components/Searcbox";
-import { useEffect, useState } from "react";
 import SilderImage from "./components/Slider";
 import useAnimesAiring from "./hooks/useAnimeAiring";
 import useAnimesUpcoming from "./hooks/useAnimeUpcoming";
 import useAnimesPopular from "./hooks/useAnimePopular";
 
 function App() {
-  const animesAiring = useAnimesAiring();
+  const {animesAiring} = useAnimesAiring();
   const animesUpcoming = useAnimesUpcoming()
   const animesPopular = useAnimesPopular()
   // console.log(animeAiring)
@@ -18,9 +16,11 @@ function App() {
         <Navbar />
         <SearchBox />
         <div className="mx-10 px-10 pb-10">
+          <a href="">
           <h3 className="text-xl font-bold text-slate-500 my-5">
             POPULAR THIS SEASON
           </h3>
+          </a>
           <div className="w-full overflow-x-scroll scroll-hidden">
             <div className="flex w-max gap-4 items-center py-4">
               {animesAiring.map((anime) => (
