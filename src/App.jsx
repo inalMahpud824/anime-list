@@ -16,7 +16,7 @@ function App() {
         <Navbar />
         <SearchBox />
         <div className="mx-10 px-10 pb-10">
-          <a href="">
+          <a href="/anime/airing">
           <h3 className="text-xl font-bold text-slate-500 my-5">
             POPULAR THIS SEASON
           </h3>
