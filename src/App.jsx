@@ -9,8 +9,8 @@ import TextCategoryAnime from "./components/TextCategoryAnime";
 
 function App() {
   const { animesAiring } = useAnimesAiring();
-  const animesUpcoming = useAnimesUpcoming();
-  const animesPopular = useAnimesPopular();
+  const {animesUpcoming} = useAnimesUpcoming();
+  const {animesPopular} = useAnimesPopular();
   // console.log(animeAiring)
   return (
     <>

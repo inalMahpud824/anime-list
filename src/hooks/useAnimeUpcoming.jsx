@@ -1,8 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export default function useAnimesUpcoming(limit = 10, offset = 0) {
+export default function useAnimesUpcoming(limit = 10) {
   const [animesUpcoming, setAnimesUpcoming] = useState([]);
+  const [offset, setOffset] = useState(0);
+  const [hasMore, setHasMore] = useState(true);
   useEffect(() => {
     const fetchAnimeUpcoming = async () => {
       try {
@@ -14,14 +16,19 @@ export default function useAnimesUpcoming(limit = 10, offset = 0) {
             },
           }
         );
-        setAnimesUpcoming(response.data.data);
+        setAnimesUpcoming((prev) => [...prev, ...response.data.data]);
+        if (response.data.data.length < limit) {
+          setHasMore(false);
+        }
       } catch (error) {
         console.error("Error fetching anime data:", error);
       }
     };
 
-    fetchAnimeUpcoming();
-  }, []);
+    if (hasMore) {
+      fetchAnimeUpcoming();
+    }
+  }, [offset, limit, hasMore]);
 
-  return animesUpcoming;
+  return { animesUpcoming, setOffset, hasMore };
 }
