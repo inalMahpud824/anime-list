@@ -18,6 +18,7 @@ function useAnimesAiring(limit = 10) {
           }
         );
         setAnimesAiring((prev) => [...prev, ...response.data.data]);
+        
         if (response.data.data.length < limit) {
           setHasMore(false);
         }

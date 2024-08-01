@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import SearchBox from "../components/Searcbox";
-import useAnimesAiring from "../hooks/useAnimeAiring";
 import { useInView } from "react-intersection-observer";
+import useAnimesPopular from "../hooks/useAnimePopular";
 
-export default function AnimesAiringPage() {
-  const { animesAiring, setOffset, hasMore } = useAnimesAiring(20);
+export default function AnimesPopularPage() {
+  const { animesPopular, setOffset, hasMore } = useAnimesPopular(20);
   const [isLoading, setIsLoading] = useState(true);
   const { ref, inView } = useInView({
     /* Optional options */
@@ -24,10 +24,10 @@ export default function AnimesAiringPage() {
       <SearchBox />
       <div className="mx-10 px-10 pb-10">
         <h1 className="text-3xl font-bold text-slate-600 my-5 ml-8">
-          Popular Anime Airing
+          Most Popularity Anime
         </h1>
         <div className="flex flex-wrap items-center gap-10 justify-center">
-          {animesAiring
+          {animesPopular
             .sort((a, b) => a.ranking.rank - b.ranking.rank)
             .map((anime) => (
               <div className="" key={anime.node.id}>

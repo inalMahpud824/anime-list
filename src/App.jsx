@@ -18,7 +18,7 @@ function App() {
         <Navbar />
         <SearchBox />
         <div className="px-5 md:mx-5 md:px-10 md:pb-10">
-          <Link to={"/anime/airing"}>
+          <Link to={"/animes/airing"}>
             <TextCategoryAnime>POPULAR THIS SEASON</TextCategoryAnime>
           </Link>
           <div className="w-full overflow-x-scroll scroll-hidden">
@@ -33,7 +33,7 @@ function App() {
               ))}
             </div>
           </div>
-          <Link to={"/anime/upcoming"}>
+          <Link to={"/animes/upcoming"}>
             <TextCategoryAnime>UPCOMING NEXT SEASON</TextCategoryAnime>
           </Link>
           <div className="w-full overflow-x-scroll scroll-hidden">
@@ -48,7 +48,7 @@ function App() {
               ))}
             </div>
           </div>
-          <Link to={"/anime/popular"}>
+          <Link to={"/animes/popular"}>
             <TextCategoryAnime>ANIME POPULAR</TextCategoryAnime>
           </Link>
           <div className="w-full overflow-x-scroll scroll-hidden">
