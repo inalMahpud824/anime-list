@@ -12,3 +12,7 @@
 .item:hover figcaption {
   bottom: 0;
 }
+
+*{
+   font-family: "Overpass", sans-serif;
+}

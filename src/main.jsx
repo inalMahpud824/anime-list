@@ -11,7 +11,11 @@ const router = createBrowserRouter([
   },
 
   {
-    path: '/anime/airing',
+    path: '/animes/airing',
+    element: <AnimesAiringPage />
+  },
+  {
+    path: '/anime/:id',
     element: <AnimesAiringPage />
   }
 ])

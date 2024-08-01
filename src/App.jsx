@@ -5,6 +5,7 @@ import useAnimesAiring from "./hooks/useAnimeAiring";
 import useAnimesUpcoming from "./hooks/useAnimeUpcoming";
 import useAnimesPopular from "./hooks/useAnimePopular";
 import { Link } from "react-router-dom";
+import TextCategoryAnime from "./components/TextCategoryAnime";
 
 function App() {
   const { animesAiring } = useAnimesAiring();
@@ -16,47 +17,48 @@ function App() {
       <div className="bg-[#EDF1F5] w-full min-h-screen m-0 p-0">
         <Navbar />
         <SearchBox />
-        <div className="mx-10 px-10 pb-10">
+        <div className="px-5 md:mx-5 md:px-10 md:pb-10">
           <Link to={"/anime/airing"}>
-            <h3 className="text-xl font-bold text-slate-500 my-5">
-              POPULAR THIS SEASON
-            </h3>
+            <TextCategoryAnime>POPULAR THIS SEASON</TextCategoryAnime>
           </Link>
           <div className="w-full overflow-x-scroll scroll-hidden">
-            <div className="flex w-max gap-4 items-center py-4">
+            <div className="flex w-max gap-4 items-center">
               {animesAiring.map((anime) => (
                 <SilderImage
                   key={anime.node.id}
                   image={anime.node.main_picture.large}
                   title={anime.node.title}
+                  to={`/anime/${anime.node.id}`}
                 />
               ))}
             </div>
           </div>
-          <h3 className="text-xl font-bold text-slate-500 my-5">
-            UPCOMING NEXT SEASON
-          </h3>
+          <Link to={"/anime/upcoming"}>
+            <TextCategoryAnime>UPCOMING NEXT SEASON</TextCategoryAnime>
+          </Link>
           <div className="w-full overflow-x-scroll scroll-hidden">
-            <div className="flex w-max gap-4 items-center py-4">
+            <div className="flex w-max gap-4 items-center">
               {animesUpcoming.map((anime) => (
                 <SilderImage
                   key={anime.node.id}
                   image={anime.node.main_picture.large}
                   title={anime.node.title}
+                  to={`/anime/${anime.node.id}`}
                 />
               ))}
             </div>
           </div>
-          <h3 className="text-xl font-bold text-slate-500 my-5">
-            ANIME POPULAR
-          </h3>
+          <Link to={"/anime/popular"}>
+            <TextCategoryAnime>ANIME POPULAR</TextCategoryAnime>
+          </Link>
           <div className="w-full overflow-x-scroll scroll-hidden">
-            <div className="flex w-max gap-4 items-center py-4">
+            <div className="flex w-max gap-4 items-center">
               {animesPopular.map((anime) => (
                 <SilderImage
                   key={anime.node.id}
                   image={anime.node.main_picture.large}
                   title={anime.node.title}
+                  to={`/anime/${anime.node.id}`}
                 />
               ))}
             </div>
