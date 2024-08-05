@@ -15,7 +15,7 @@ const SearchBox = () => {
         },
       });
       navigate("/animes/search-results", {
-        state: { searchResults: result.data},
+        state: { searchResults: result.data.data},
       });
     } catch (err) {
       console.error(err);
