@@ -9,9 +9,8 @@ import TextCategoryAnime from "./components/TextCategoryAnime";
 
 function App() {
   const { animesAiring } = useAnimesAiring();
-  const {animesUpcoming} = useAnimesUpcoming();
-  const {animesPopular} = useAnimesPopular();
-  // console.log(animeAiring)
+  const { animesUpcoming } = useAnimesUpcoming();
+  const { animesPopular } = useAnimesPopular();
   return (
     <>
       <div className="bg-[#EDF1F5] w-full min-h-screen m-0 p-0">
